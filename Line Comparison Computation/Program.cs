@@ -7,6 +7,8 @@ namespace LineComparisonComputation
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Line Comparison Computation Program");
+            LineComparison ob1= new LineComparison();
+            ob1.LengthOfLine();
         }
     }
 

@@ -10,6 +10,7 @@ namespace LineComparisonComputation
     {
         public void LengthOfLine()
         {
+            //Line 1 Length Calculation
             Console.WriteLine("Enter the value of x and y for point 1");
             Console.Write("x1:");
             int x1 = Convert.ToInt32(Console.ReadLine());
@@ -21,12 +22,11 @@ namespace LineComparisonComputation
             int x2 = Convert.ToInt32(Console.ReadLine());
             Console.Write("y2:");
             int y2 = Convert.ToInt32(Console.ReadLine());
-            double Power1 = Math.Pow(x2 - x1, 2);
-            double Power2 = Math.Pow(y2 - y1, 2);
-            double TotalPow = Power1 + Power2;
-            double Line1 = Math.Sqrt(TotalPow);
+            double Power1 = Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2);
+            double Line1 = Math.Sqrt(Power1);
             Console.WriteLine("Length of the line 1 is " + Line1);
 
+            //Line 2 Length Calculation
             Console.WriteLine("---------------------");
             Console.WriteLine("Enter the value of x and y for point 3");
             Console.Write("x3:");
@@ -39,10 +39,8 @@ namespace LineComparisonComputation
             int x4 = Convert.ToInt32(Console.ReadLine());
             Console.Write("y4:");
             int y4 = Convert.ToInt32(Console.ReadLine());
-            double Power3 = Math.Pow(x4 - x3, 2);
-            double Power4 = Math.Pow(y4 - y3, 2);
-            double TotalPow2 = Power3 + Power4;
-            double Line2 = Math.Sqrt(TotalPow2);
+            double Power2 = Math.Pow(x4 - x3, 2) + Math.Pow(y4 - y3, 2);
+            double Line2 = Math.Sqrt(Power2);
             Console.WriteLine("Length of the line 2 is " + Line2);
 
 
@@ -59,17 +57,24 @@ namespace LineComparisonComputation
             //}
 
 
-            if (Line1 > Line2)
+
+            if (Line1.Equals(Line2) == true)
             {
-                Console.WriteLine("Line1 is greater than Line2");
-            }
-            else if (Line1 < Line2)
-            {
-                Console.WriteLine("Line2 is greater than Line1");
+                Console.WriteLine("Both lines are equal");
             }
             else
             {
-                Console.WriteLine("Both Lines are equal");
+                Console.WriteLine("Both lines are not equal");
+
+
+                if (Line1.CompareTo(Line2) > 0)
+                {
+                    Console.WriteLine("Line1 is greater than Line2");
+                }
+                else
+                {
+                    Console.WriteLine("Line2 is greater than Line1");
+                }
             }
 
         }
